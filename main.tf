@@ -44,7 +44,7 @@ resource "github_repository" "site_repo" {
 resource "github_repository_file" "index_html" {
   repository          = github_repository.site_repo.name
   file                = "index.html"
-  content             = file("${path.module}/netlify-site/index.html")
+  content             = file("${path.module}/index.html")
   branch              = "main"
   commit_message      = "Add index.html"
   overwrite_on_create = true
@@ -56,7 +56,7 @@ resource "github_repository_file" "index_html" {
 resource "github_repository_file" "style_css" {
   repository          = github_repository.site_repo.name
   file                = "style.css"
-  content             = file("${path.module}/netlify-site/style.css")
+  content             = file("${path.module}/style.css")
   branch              = "main"
   commit_message      = "Add style.css"
   overwrite_on_create = true
@@ -68,7 +68,7 @@ resource "github_repository_file" "style_css" {
 resource "github_repository_file" "script_js" {
   repository          = github_repository.site_repo.name
   file                = "script.js"
-  content             = file("${path.module}/netlify-site/script.js")
+  content             = file("${path.module}/script.js")
   branch              = "main"
   commit_message      = "Add script.js"
   overwrite_on_create = true
